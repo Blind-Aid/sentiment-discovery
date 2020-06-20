@@ -1,12 +1,17 @@
 # Code Snippets:
 
+**ONLY PYTHON VERSIONS BELOW 3.7 (INCLUSIVE) WORKS.** 
+
 Running text classification:  
-Install [Finetuned SST Transformer [621MB]](https://drive.google.com/file/d/1rC6LWGNkHaZkuojCEWDqSKcDGwFMBTYZ/view?usp=sharing)
-`python run_classifier.py --load transformer_semeval.clf --text-key Tweet --data data/semeval/train.csv --model transformer --write-results results.csv`
+* Install [Finetuned SST Transformer [621MB]](https://drive.google.com/file/d/1rC6LWGNkHaZkuojCEWDqSKcDGwFMBTYZ/view?usp=sharing)  
+* Install requirements `pip install -r requirements.txt`  
+* Setup `python setup.py install`
+* Run command for text classification:
+`python run_classifier.py --load transformer_semeval.clf --text-key Tweet --data data/semeval/train.csv --model transformer --write-results results.csv`  
 
-  * Need to have torch==1.0.1 for this. Yet to figure out how to setup this version. [For refrence](https://pytorch.org/get-started/previous-versions/#linux-and-windows-5). [Link of stable versions of pytorch whl](https://download.pytorch.org/whl/cpu/torch_stable.html)
+  * Need to have torch==1.0.1 for this. If running on windows or Mac, find whl file of stable version from [here](https://download.pytorch.org/whl/cpu/torch_stable.html). **Note: cpxx in the file name represents python version. eg torch-1.0.1-cp36-cp36m-win_amd64.whl represents python version 3.6**
 
-
+---
 
 # PyTorch Unsupervised Sentiment Discovery
 This codebase contains pretrained binary sentiment and multimodel emotion classification models as well as code to reproduce results from our series of large scale pretraining + transfer NLP papers: _[Large Scale Language Modeling: Converging on 40GB of Text in Four Hours](https://nv-adlr.github.io/publication/2018-large-batch-lm)_ and _[Practical Text Classification With Large Pre-Trained Language Models](https://arxiv.org/abs/1812.01207)_. This effort was born out of a desire to reproduce, analyze, and scale the [Generating Reviews and Discovering Sentiment](https://github.com/openai/generating-reviews-discovering-sentiment) paper from OpenAI.
