@@ -30,7 +30,7 @@ def get_data_and_args():
     args.cuda = torch.cuda.is_available()
     args.shuffle=False
 
-    if args.seed is not -1:
+    if args.seed != -1:
         torch.manual_seed(args.seed)
         if args.cuda:
             torch.cuda.manual_seed(args.seed)
@@ -45,7 +45,7 @@ def get_model(args):
     sd = None
     model_args = args
     if args.load is not None and args.load != '':
-        sd = torch.load(args.load)
+        sd = torch.load(args.load, map_location = "cpu")
         if 'args' in sd:
             model_args = sd['args']
         if 'sd' in sd:
