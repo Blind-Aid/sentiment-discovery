@@ -2,14 +2,15 @@
 
 **ONLY PYTHON VERSIONS BELOW 3.7 (INCLUSIVE) WORKS.** 
 
-Running text classification:  
-* Install [Finetuned SST Transformer [621MB]](https://drive.google.com/file/d/1rC6LWGNkHaZkuojCEWDqSKcDGwFMBTYZ/view?usp=sharing)  
+## Setting up
 * Install requirements `pip install -r requirements.txt`  
+  * Need to have torch==1.0.1 for this. If running on windows or Mac, find whl file of stable version from [here](https://download.pytorch.org/whl/cpu/torch_stable.html). Copy the link address of desired whl file and replace with the link on the 2nd line of requirements.txt **Note: cpxx in the file name represents python version. eg torch-1.0.1-cp36-cp36m-win_amd64.whl represents python version 3.6**
 * Setup `python setup.py install`
+
+## Running text classification:  
+* Install [Finetuned SST Transformer [621MB]](https://drive.google.com/file/d/1rC6LWGNkHaZkuojCEWDqSKcDGwFMBTYZ/view?usp=sharing)  
 * Run command for text classification:
 `python run_classifier.py --load transformer_semeval.clf --text-key Tweet --data data/semeval/train.csv --model transformer --write-results results.csv`  
-
-  * Need to have torch==1.0.1 for this. If running on windows or Mac, find whl file of stable version from [here](https://download.pytorch.org/whl/cpu/torch_stable.html). **Note: cpxx in the file name represents python version. eg torch-1.0.1-cp36-cp36m-win_amd64.whl represents python version 3.6**
 
 ---
 
